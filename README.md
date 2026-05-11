@@ -186,4 +186,7 @@ digest = hashlib.sha256(data_bytes).hexdigest()
 print(f"SHA-256(0x{dato:08X}) = {digest}")
 ```
 
+## 📄 Licencia
+
+Este proyecto es de uso académico. Consultar con los autores antes de reutilizar el código.
 
