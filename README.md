@@ -5,7 +5,7 @@ Implementación en Verilog de un acelerador hardware SHA-256, desplegado en dos 
 
 ---
 
-## 📋 Descripción General
+##  Descripción General
 
 Este proyecto implementa el algoritmo de hash criptográfico **SHA-256** directamente en lógica programable (FPGA), sin uso de procesador externo. El sistema está dividido en dos FPGAs:
 
@@ -18,7 +18,7 @@ El flujo completo permite comprobar que un dato de 8 bits no fue alterado en la 
 
 ---
 
-## 🗂️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 sha256/
@@ -31,7 +31,7 @@ sha256/
 
 ---
 
-## ⚙️ Arquitectura
+##  Arquitectura
 
 ### Núcleo SHA-256 (`sha256_core.v`)
 
@@ -111,8 +111,8 @@ Recibe 33 bytes por UART
     └─► Extrae dato[7:0] y hash_recibido[255:0]
             └─► Recalcula SHA-256(dato)
                     └─► Compara hash recalculado vs. hash recibido
-                            ├─► Igual  → LED_OK  = 1 ✅
-                            └─► Distinto → LED_OK = 0 ❌
+                            ├─► Igual  → LED_OK  = 1 
+                            └─► Distinto → LED_OK = 0 
 ```
 
 **Timeout de 40 ms**: Si la recepción se interrumpe, el buffer se reinicia automáticamente para evitar bloqueos.
@@ -138,7 +138,7 @@ Recibe 33 bytes por UART
 
 ---
 
-## 🚀 Síntesis e Implementación
+##  Síntesis e Implementación
 
 ### Requisitos
 
@@ -157,7 +157,7 @@ Recibe 33 bytes por UART
 
 ---
 
-## 📊 Recursos de Hardware Estimados
+##  Recursos de Hardware Estimados
 
 | Recurso | Estimado |
 |---------|---------|
@@ -170,7 +170,7 @@ Recibe 33 bytes por UART
 
 ---
 
-## 🧪 Verificación
+##  Verificación
 
 Para verificar que el hash generado es correcto, se puede usar Python:
 
@@ -185,8 +185,7 @@ data_bytes = struct.pack('>I', dato)  # 4 bytes big-endian
 digest = hashlib.sha256(data_bytes).hexdigest()
 print(f"SHA-256(0x{dato:08X}) = {digest}")
 ```
-
-## 📄 Licencia
+##  Licencia
 
 Este proyecto es de uso académico. Consultar con los autores antes de reutilizar el código.
 
