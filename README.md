@@ -186,14 +186,4 @@ digest = hashlib.sha256(data_bytes).hexdigest()
 print(f"SHA-256(0x{dato:08X}) = {digest}")
 ```
 
----
 
-## 👥 Autores
-
-Proyecto académico desarrollado para el curso de **Sistemas Embebidos** — Universidad de las Américas Puebla (UDLAP).
-
----
-
-## 📄 Licencia
-
-Este proyecto es de uso académico. Consultar con los autores antes de reutilizar el código.
