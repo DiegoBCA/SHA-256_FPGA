@@ -1,4 +1,4 @@
-# SHA-256_FPGA
+
 # SHA-256 en FPGA con Verificación de Integridad vía UART
 
 Implementación en Verilog de un acelerador hardware SHA-256, desplegado en dos tarjetas **DE10-Lite (Intel MAX 10)** que se comunican mediante **UART** para verificar la integridad de datos en tiempo real.
@@ -121,7 +121,7 @@ Recibe 33 bytes por UART
 
 ---
 
-## 🔌 Conexiones de Hardware
+##  Conexiones de Hardware
 
 | Señal | FPGA TX | FPGA RX |
 |-------|---------|---------|
