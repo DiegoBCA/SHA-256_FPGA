@@ -155,37 +155,5 @@ Recibe 33 bytes por UART
 5. Compilar (`Processing → Start Compilation`).
 6. Programar cada FPGA con su archivo `.sof` correspondiente.
 
----
 
-##  Recursos de Hardware Estimados
-
-| Recurso | Estimado |
-|---------|---------|
-| LEs (Logic Elements) | ~800–1,200 |
-| Registros | ~400–600 |
-| Frecuencia máxima | > 50 MHz |
-| Latencia SHA-256 | 67 ciclos (~1.34 µs @ 50 MHz) |
-| Velocidad UART | 115,200 bps |
-| Tiempo de transmisión | ~2.9 ms (33 bytes × 86.8 µs/byte) |
-
----
-
-##  Verificación
-
-Para verificar que el hash generado es correcto, se puede usar Python:
-
-```python
-import hashlib
-import struct
-
-dato = 0x42  # Valor de los switches, ejemplo: SW = 0b01000010
-
-# SHA-256 de un entero de 32 bits (big-endian, mismo padding que el hardware)
-data_bytes = struct.pack('>I', dato)  # 4 bytes big-endian
-digest = hashlib.sha256(data_bytes).hexdigest()
-print(f"SHA-256(0x{dato:08X}) = {digest}")
-```
-##  Licencia
-
-Este proyecto es de uso académico. Consultar con los autores antes de reutilizar el código.
 
